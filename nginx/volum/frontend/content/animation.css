@@ -1,0 +1,213 @@
+/*steps() and clamp() function*/
+@keyframes blurEffect {
+  0% {
+    filter: blur(5px);
+  }
+
+  100% {
+    filter: blur(10px);
+  }
+}
+
+@keyframes RemoveBlurEffect {
+  0% {
+    filter: blur(10px);
+  }
+  100% {
+    filter: blur(0px);
+  }
+}
+@keyframes opensettings {
+  0%{
+    opacity: 0;
+  }
+  40%{
+    opacity: 0.4;
+  }
+  80%{
+    opacity: 0.8;
+  }
+  100%{
+    opacity: 1;
+  }
+  
+}
+@keyframes permission {
+  0%{
+    opacity: 1;
+  }
+  20%{
+    opacity: 0;
+  }
+  40%{
+    opacity: 1;
+  }
+  50%{
+    opacity: 0;
+  }
+  70%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+  
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes sign_animation {
+  0% {
+    opacity: 0;
+    transform: translateY(100vh);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: translateY(-20vh);
+  }
+  80% {
+    opacity: 0.8;
+    transform: translateY(5vh);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes close_animation {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: translateY(5vh);
+  }
+  80% {
+    opacity: 0.3;
+    transform: translateY(-80vh);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100vh);
+  }
+}
+
+@keyframes green_shimmer {
+  0% {
+    background-position-x: 150%;
+  }
+  20% {
+    background-position-x: 120%;
+  }
+  40% {
+    background-position-x: 90%;
+  }
+  60% {
+    background-position-x: 60%;
+  }
+  80% {
+    background-position-x: 30%;
+  }
+  100% {
+    background-position-x: -50%;
+    background-image: none;
+  }
+}
+@keyframes shimmer {
+  0% {
+    background-position-x: 150%;
+  }
+  20% {
+    background-position-x: 120%;
+  }
+  40% {
+    background-position-x: 90%;
+  }
+  60% {
+    background-position-x: 60%;
+  }
+  80% {
+    background-position-x: 30%;
+  }
+  100% {
+    background-position-x: -50%;
+  }
+}
+@keyframes WelcomeSlide {
+  0% {
+    transform: translateX(20vw);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(-5vw);
+    opacity: 0.8;
+  }
+  80% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes zoomInQrcode {
+  0% {
+    transform: scale(0) translate(35%, -26%);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translate(-50%, -50%);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomOutQrcode {
+  0% {
+    transform: scale(1) translate(-50%, -50%);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0) translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+@keyframes opacityIntro {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+  
+}
+/* Define the zoomOut keyframe animation */
+@keyframes zoomOut {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}

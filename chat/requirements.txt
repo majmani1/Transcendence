@@ -1,0 +1,13 @@
+Django==3.2.12
+requests==2.26.0
+psycopg2>=2.8
+channels
+daphne
+djangorestframework
+django-cors-headers
+channels_redis
+redis>=4.3.0
+djangorestframework_simplejwt==5.3.1
+aioredis
+PyJWT==2.10.0
+pillow==11.0.0

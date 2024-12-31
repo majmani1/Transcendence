@@ -1,0 +1,9 @@
+Django==3.2.12
+requests==2.26.0
+psycopg2>=2.8
+channels
+daphne
+djangorestframework
+django-cors-headers
+# aiohttp==3.8.1
+PyJWT==2.10.0

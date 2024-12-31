@@ -1,0 +1,74 @@
+.bodyS {
+  width: 100vw;
+  height: 100vh;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+.container {
+  margin-top: 6vh;
+  animation: zoomIn 1s;
+
+}
+.card {
+  box-shadow: 0 20px 27px 0 rgb(0 0 0 / 5%);
+}
+.card {
+  position: relative;
+  margin-top: 13vh;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: rgba(0, 0, 0, 0.648);
+  background-clip: border-box;
+  border: 0 solid rgba(0, 0, 0, 0.125);
+  border-radius: 1rem;
+  z-index: 100;
+}
+.img-thumbnail {
+  padding: 0.25rem;
+  background-color: var(--border-color);
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  max-width: 100%;
+  height: auto;
+}
+.avatar-lg {
+  height: 150px;
+  width: 150px;
+}
+.mb-4,
+.text-info {
+  color: white !important;
+}
+.TwoFaSubmit {
+  background-color: var(--border-color) !important;
+  color: black !important;
+  width: 9vw;
+  margin-left: 0.5vw;
+}
+.TwoFaSubmit:hover {
+  filter: drop-shadow(0 0 0.75rem var(--border-color));
+  scale: 1.1;
+  border: 1px solid black;
+}
+.digit {
+  font-family: "poppins", "Press Start 2P", sans-serif;
+  font-size: 1.3vw;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}

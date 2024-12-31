@@ -1,0 +1,330 @@
+.bodyS {
+	margin: 0;
+	width: 100vw;
+	height: 100vh;
+	padding: 0;
+	background: black;
+}
+
+.full {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.tournament {
+	width: 75%;
+	height: 32vw;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.side1,
+.side2,
+.side3,
+.side4 {
+	width: 25vw;
+	height: 15vw;
+	border: 0.3vw solid #02eb98;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 2vw 2vw 0px 2vw;
+	clip-path: polygon(
+		0 10%,
+		0% 0,
+		90% 0,
+		100% 0%,
+		100% 85%,
+		91% 100%,
+		0% 100%,
+		0% 90%,
+		0% 10%
+	);
+}
+
+.tour1 {
+	width: 7vw;
+	height: 10vw;
+	border: 0.3vw solid #02eb98;
+	border-left: 0px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border-radius: 10%;
+}
+
+.loser1 {
+	border-image: linear-gradient(0deg, red, #02eb98) 1;
+}
+
+.loser2 {
+	border-image: linear-gradient(red, #02eb98) 1;
+	border-radius: 10%;
+}
+
+.players {
+	width: 7vw;
+	height: 3vw;
+	border-radius: 1.4vw;
+	color: white;
+	font-size: 1vw;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: black;
+}
+
+.playerUp {
+	margin-top: -22%;
+	margin-left: -17%;
+
+	box-shadow: 0 0 0vw 0vw #02eb98, 0 0 2vw 0.4vw #099e6a,
+		inset 0 0 0.1vw 0.01vw #02eb98, inset 0 0 0.2vw 0.2vw #00ac70,
+		inset 0 0 0.25vw 0.2vw #027b50;
+}
+
+.playerDown {
+	margin-bottom: -22%;
+	margin-left: -17%;
+
+	box-shadow: 0 0 0vw 0vw #02eb98, 0 0 2vw 0.4vw #099e6a,
+		inset 0 0 0.1vw 0.01vw #02eb98, inset 0 0 0.2vw 0.2vw #00ac70,
+		inset 0 0 0.25vw 0.2vw #027b50;
+}
+
+.picLoser {
+	box-shadow: 0 0 0vw 0vw red, 0 0 2vw 0.4vw #b80b0b, inset 0 0 0.1vw 0.01vw red,
+		inset 0 0 0.2vw 0.2vw #b80b0b, inset 0 0 0.25vw 0.2vw #b80b0b;
+}
+
+.side1 .winner,
+.side2 .winner {
+	margin-top: -5%;
+	width: 8vw;
+	height: 1vw;
+	border-bottom: 0.3vw solid #02eb98;
+}
+
+.side3 .winner,
+.side4 .winner {
+	margin-top: 1%;
+	width: 8vw;
+	height: 1vw;
+	/* background: red; */
+	border-bottom: 0.3vw solid #02eb98;
+}
+
+.playerWinner {
+	width: 7vw;
+	height: 3vw;
+	border-radius: 1.4vw;
+	margin-left: 90%;
+	margin-top: -9%;
+	box-shadow: 0 0 0vw 0vw #02eb98, 0 0 2vw 0.4vw #099e6a,
+		inset 0 0 0.1vw 0.01vw #02eb98, inset 0 0 0.2vw 0.2vw #00ac70,
+		inset 0 0 0.25vw 0.2vw #027b50;
+}
+
+@keyframes showCecles {
+	0% {
+		opacity: 0;
+	}
+	47% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.cercle {
+	position: absolute;
+	width: 2vw;
+	height: 2.2vw;
+	border-top-left-radius: 2vw;
+	/* background: white; */
+	margin-right: -23.2%;
+	margin-top: 13.4%;
+	border-left: 0.3vw solid #02eb98;
+	border-top: 0.3vw solid #02eb98;
+	animation: 2s showCecles ease;
+}
+
+/* .exeption{
+
+} */
+
+.side2 .cercle {
+	margin-left: 69.4%;
+	margin-top: 53%;
+}
+
+.side3 .cercle {
+	margin-left: 69.4%;
+	margin-top: 53%;
+}
+.side4 .cercle {
+	margin-left: 69.4%;
+	margin-top: 53%;
+}
+
+.side2 {
+	transform: scaleX(-1);
+}
+
+.side3 {
+	transform: scaleY(-1);
+}
+.side4 {
+	transform: scaleX(-1) scaleY(-1);
+}
+
+.side3 .tour1,
+.side4 .tour1,
+.side3 .winner,
+.side4 .winner {
+	transform: rotate(180deg);
+	transform: scaleY(-1);
+}
+
+.rotateName {
+	transform: scaleX(-1);
+}
+
+.demiFinal {
+	width: 3vw;
+	height: 7vw;
+	border-left: 0.3vw solid #02eb98;
+	border-bottom: 0.3vw solid #02eb98;
+	border-bottom-left-radius: 2vw;
+	z-index: -1;
+	margin-top: 25%;
+	margin-left: 12%;
+}
+
+.final {
+	position: absolute;
+	width: 24.5vw;
+	height: 15vw;
+	margin-top: 0%;
+	margin-left: 25.3%;
+	display: flex;
+	align-items: center;
+	animation: 2s showCecles ease;
+}
+
+@keyframes showBottom {
+	0% {
+		opacity: 0;
+		/* scale: 0; */
+	}
+	100% {
+		opacity: 1;
+		/* scale: 1; */
+	}
+}
+
+/* .bottomAnimation {
+	animation: 2s showBottom ease;
+} */
+
+@keyframes showTop {
+	0% {
+		opacity: 0;
+		scale: 0.2;
+	}
+	100% {
+		opacity: 1;
+		scale: 1;
+	}
+}
+
+.topAnimation,
+.bottomAnimation {
+	animation: 1s showTop ease;
+}
+
+.tubeFinal {
+	width: 98%;
+	height: 20%;
+	background: #d9d9d962;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.playerfinal {
+	width: 7vw;
+	height: 3vw;
+	border-radius: 1.4vw;
+	background: black;
+	box-shadow: 0 0 0vw 0vw #02eb98, 0 0 2vw 0.4vw #099e6a,
+		inset 0 0 0.1vw 0.01vw #02eb98, inset 0 0 0.2vw 0.2vw #00ac70,
+		inset 0 0 0.25vw 0.2vw #027b50;
+}
+
+.lineFinal {
+	width: 30%;
+	border: 0.3vw solid #02eb98;
+}
+
+.playerfinal {
+	width: 7vw;
+	height: 3vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	font-size: 1vw;
+}
+
+.playerFinalleft {
+	margin-left: -5%;
+	font-size: 0.7vw;
+}
+
+.playerWinnerFinal {
+	width: 9vw;
+	height: 6vw;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	background: black;
+	font-size: 1vw;
+	box-shadow: 0 0 0vw 0vw #02eb98, 0 0 2vw 0.4vw #099e6a,
+		inset 0 0 0.1vw 0.01vw #02eb98, inset 0 0 0.2vw 0.2vw #00ac70,
+		inset 0 0 0.25vw 0.2vw #027b50;
+}
+
+.playerFinalRight {
+	margin-right: -4%;
+	font-size: 0.7vw;
+	color: #02eb98;
+}
+
+.crown {
+	position: absolute;
+	width: 5vw;
+	height: 5vw;
+	margin-left: 43%;
+	margin-top: -38%;
+	transform: rotate(10deg);
+}
+
+@media only screen and (max-width: 700px) {
+	.tournament {
+		/* background: red;
+		rotate: 90deg; */
+		/* width: 50%; */
+	}
+	.final {
+		/* margin-left: 35%; */
+	}
+}

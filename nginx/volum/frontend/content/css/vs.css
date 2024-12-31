@@ -1,0 +1,221 @@
+.bodyS {
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+	height: 100vh;
+	background: black;
+}
+.fullVs {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@keyframes ShowPlayerLVs {
+	0% {
+		opacity: 0;
+		transform: translateY(-15%);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0%);
+	}
+}
+
+@keyframes ShowPlayerRVs {
+	0% {
+		opacity: 0;
+		transform: translateY(15%);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0%);
+	}
+}
+
+.playersVs {
+	width: 75%;
+	height: 31vw;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	/* background: red; */
+	flex-wrap: wrap;
+	/* margin-top: auto; */
+}
+
+.player1Vs {
+	width: 27%;
+	height: 70%;
+	border: 5px solid #02eb98;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	border-radius: 13%;
+	/* animation: 1s ShowPlayeVs ease; */
+}
+
+.leftVs {
+	animation: 2s ShowPlayerLVs ease;
+}
+
+.rightVs {
+	animation: 2s ShowPlayerRVs ease;
+}
+
+.namePlayer1 {
+	font-size: 1.5vw;
+	color: white;
+}
+
+@keyframes showTube {
+	0% {
+		opacity: 0;
+	}
+	40% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.tubeVs {
+	width: 41%;
+	height: 0%;
+	border: 3px solid green;
+	display: flex;
+	justify-content: space-between;
+	animation: 2s showTube ease;
+}
+
+.pointPlayer1 {
+	width: 3vw;
+	height: 3vw;
+	border-radius: 50%;
+	margin-top: -5.5%;
+	margin-left: -8%;
+	background: black;
+	box-shadow: 0 0 10vw 0vw #02eb98, 0 0 2vw 0.4vw #099e6a,
+		inset 0 0 0.5vw 0.2vw #02eb98, inset 0 0 0.2vw 0.2vw #00ac70,
+		inset 0 0 0.25vw 0.2vw #027b50;
+}
+
+.pointPlayer2 {
+	width: 3vw;
+	height: 3vw;
+	border-radius: 50%;
+	margin-top: -5.5%;
+	margin-right: -8%;
+	background: black;
+	box-shadow: 0 0 10vw 0vw #02eb98, 0 0 2vw 0.4vw #099e6a,
+		inset 0 0 0.5vw 0.2vw #02eb98, inset 0 0 0.2vw 0.2vw #00ac70,
+		inset 0 0 0.25vw 0.2vw #027b50;
+	z-index: 1;
+}
+
+.textVs {
+	height: 8vw;
+	width: 8vw;
+	background: black;
+	/* box-shadow: 
+    0 0 10vw 0vw #02EB98,
+    0 0 2vw 0.4vw #099e6a,
+    inset 0 0 .5vw 0.2vw #02EB98,
+    inset 0 0 .2vw 0.2vw #00ac70,
+    inset 0 0 .25vw 0.2vw #027b50; */
+	border-radius: 50%;
+	margin-top: -13.5%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 4vw;
+	color: white;
+	animation: 3s change_colorVS infinite ease-in-out;
+}
+
+@keyframes change_colorVS {
+	0% {
+		box-shadow: 0px 0px 5px rgba(255, 255, 255, 1),
+			0px 0px 10px rgba(255, 255, 255, 1), 0px 0px 15px #02eb98,
+			0px 0px 20px #0f0f0f, 0px 0px 75px #020202;
+	}
+	30% {
+		box-shadow: 0px 0px 5px rgba(255, 255, 255, 1),
+			0px 0px 10px rgba(255, 255, 255, 1), 0px 0px 15px #02eb98,
+			0px 0px 20px #02eb98, 0px 0px 75px #020202;
+	}
+	50% {
+		box-shadow: 0px 0px 5px rgba(255, 255, 255, 1),
+			0px 0px 10px rgba(255, 255, 255, 1), 0px 0px 15px #02eb98,
+			0px 0px 20px #02eb98, 0px 0px 75px #02eb98;
+	}
+	70% {
+		box-shadow: 0px 0px 5px rgba(255, 255, 255, 1),
+			0px 0px 10px rgba(255, 255, 255, 1), 0px 0px 15px #02eb98,
+			0px 0px 20px #02eb98, 0px 0px 75px #020202;
+	}
+	100% {
+		box-shadow: 0px 0px 5px rgba(255, 255, 255, 1),
+			0px 0px 10px rgba(255, 255, 255, 1), 0px 0px 15px #02eb98,
+			0px 0px 20px #0f0f0f, 0px 0px 75px #020202;
+	}
+}
+
+@media only screen and (max-width: 700px) {
+	.playersVs {
+		height: 80vh;
+		width: 50vh;
+	}
+	.player1Vs {
+		width: 60%;
+		height: 30%;
+	}
+	.tubeVs {
+		transform: rotate(90deg);
+	}
+	.textVs {
+		transform: rotate(-90deg);
+	}
+	.namePlayer1 {
+		font-size: 2.5vh;
+	}
+}
+
+.waiting {
+	background: url("../img/waiting.gif");
+	background-size: cover;
+	border-radius: 0%;
+	box-shadow: none;
+	height: 7vw;
+	width: 7vw;
+	margin-top: 13.5%;
+}
+
+.picturePlayer2,
+.picturePlayer1 {
+	height: 10vw;
+	width: 10vw;
+
+	/* background: url("../img/avatar.jpg"); */
+	background-position: center;
+	background-size: cover;
+	border-radius: 50%;
+	box-shadow: 0 0 10vw 0vw #02eb98, 0 0 2vw 0.4vw #099e6a,
+		inset 0 0 0.5vw 0.2vw #02eb98, inset 0 0 0.2vw 0.2vw #00ac70,
+		inset 0 0 0.25vw 0.2vw #027b50;
+}
+
+.defaultPicture {
+	height: 10vw;
+	width: 10vw;
+	background: url("../img/defaultUser.png");
+	background-size: cover;
+	border-radius: 50%;
+	box-shadow: 0 0 10vw 0vw #02eb98, 0 0 2vw 0.4vw #099e6a,
+		inset 0 0 0.5vw 0.2vw #02eb98, inset 0 0 0.2vw 0.2vw #00ac70,
+		inset 0 0 0.25vw 0.2vw #027b50;
+}

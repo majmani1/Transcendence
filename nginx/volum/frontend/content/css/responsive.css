@@ -1,0 +1,74 @@
+@media only screen and (max-width: 600px) {
+
+    body{
+        overflow: hidden;
+    }
+    .table{
+         /* transform: rotate(180deg); */
+        width: 50vh;
+        height: 25vh;
+    }
+
+    .game{
+        height: 90vh;
+        overflow: hidden;
+
+    }
+    .score{
+        position: absolute;
+        left: 70vw;
+        top: 37vh;
+        transform: rotate(90deg);
+    }
+    .tubeAndTable{
+        position: absolute;
+        top: 25vh;
+        left: -40vw;
+        width: 90vh;
+        transform: rotate(90deg);
+       /* align-items: end; */
+       /* display: flex;
+       justify-content: space-between; */
+    }
+   
+    .cercles1,.cercles2,.cercles3,.cercles4,.cercles5,.cercles6,.cercles7,.cercles8,.cercles9,.cercles10
+    {
+        display: none;
+    }
+   
+
+    .tubeSocer2 , .tubeSocer1{
+        /* display: none;
+        opacity: 0; */
+    }
+
+   
+  
+
+
+ 
+    .chose_score{
+        width: 80vw;
+        height: 50vw;
+        left: 10vw;
+
+    }
+
+    .value_score{
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .chose_score .value_score span{
+        display: inline-block;
+         font-size: 2vw;
+    }
+  
+    .chose_score img{
+    margin-top: -19%;
+
+    }
+
+    
+  }

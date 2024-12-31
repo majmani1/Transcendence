@@ -1,0 +1,169 @@
+networks:
+  my_network:
+    name: my_network
+    driver: bridge
+
+services:
+  db:
+    image: postgres
+    container_name: db
+    restart: always
+    networks:
+      - my_network
+    env_file:
+      - .env
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -h db -p 5432 -U BOSS"]
+
+  Auth:
+    build: ./Auth
+    image: authimage
+    container_name: Auth
+    networks:
+      - my_network
+    volumes:
+      - ./Auth/AuthProject:/AuthProject
+    restart: always
+    depends_on:
+      db : 
+        condition: service_healthy
+    env_file:
+      - .env
+
+
+  chat:
+    build: ./chat
+    image: chatimage
+    container_name: chat
+    networks:
+      - my_network
+    volumes:
+      - ./chat/chatProject:/chatProject
+    restart: always
+    depends_on:
+      - Auth 
+    env_file:
+      - .env
+
+  game:
+    build: ./Game
+    image: gameimage
+    container_name: game
+    networks:
+      - my_network
+    volumes:
+      - ./Game/game:/Game
+    restart: always
+    depends_on:
+      - Auth
+    env_file:
+      - .env
+
+  secondGame:
+    build: ./SecondGame
+    image: secondimage
+    container_name: Secondgame
+    networks:
+      - my_network
+    volumes:
+      - ./SecondGame/second_game:/second_game
+    restart: always
+    depends_on:
+      - Auth
+    env_file:
+      - .env
+
+  Track:
+    build: ./Track
+    image: track
+    container_name: Track
+    restart: always
+    networks:
+      - my_network
+    volumes:
+      - ./Track/track:/track
+    depends_on:
+      - Auth
+    env_file:
+      - .env
+
+  nginx_proxy:
+    build: ./nginx
+    image: nginx_proxy
+    container_name: nginx
+    restart: always
+    volumes:
+      - ./nginx/volum/frontend:/home
+      - ./Auth/AuthProject/Avatars:/home/content/Auth/imageLandscape/Avatars
+      - ./nginx/volum:/var/www/ft_trendenden
+    networks:
+      - my_network
+    ports:
+      - 4443:443
+    depends_on:
+      - Auth
+      - Track
+      - chat
+      - game
+      - secondGame
+    env_file:
+      - .env
+
+  redis:
+    image: redis:latest
+    container_name: redis
+    restart: always
+    networks:
+      - my_network
+
+# volumes:
+#   volume_game:
+#     name: volume_game
+#     driver: local
+#     driver_opts:
+#       type: none
+#       device: ./Game/game
+#       o: bind
+#   ft_frontend:
+#     name: ft_frontend
+#     driver: local
+#     driver_opts:
+#       type: none
+#       device: ./nginx/volum/frontend
+#       o: bind
+
+#   volum:
+#     name: chat
+#     driver: local
+#     driver_opts:
+#       type: none
+#       device: ./chat/chatProject
+#       o: bind
+#   volume_nginx:
+#     name: volume_nginx
+#     driver: local
+#     driver_opts:
+#       type: none
+#       device: ./nginx/volum
+#       o: bind
+#   volume_Auth:
+#     name: Auth_volume
+#     driver: local
+#     driver_opts:
+#       type: none
+#       device: ./Auth/AuthProject
+#       o: bind
+#   volume_track:
+#     name: volume_track
+#     driver: local
+#     driver_opts:
+#       type: none
+#       device: ./Track/track
+#       o: bind
+#   volume_second_game:
+#     name: volume_second_gam
+#     driver: local
+#     driver_opts:
+#       type: none
+#       device: ./SecondGame/second_game
+#       o: bind

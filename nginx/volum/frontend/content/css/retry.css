@@ -1,0 +1,196 @@
+.bodyS {
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+	height: 100vh;
+	background: black;
+	overflow: hidden;
+}
+
+.fullRetry {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	z-index: 1;
+	/* background: black; */
+	justify-content: center;
+	align-items: center;
+}
+
+.PageRetry {
+	width: 80%;
+	height: 30vw;
+	display: flex;
+	justify-content: center;
+	/* align-items: center; */
+	/* background: red; */
+	flex-wrap: wrap;
+	z-index: 2;
+}
+
+.profilRetry {
+	height: 15vw;
+	width: 15vw;
+	/* background: blue; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.pictureRetry {
+	background-position: center;
+	height: 9vw;
+	width: 9vw;
+	/* background: url("../img/avatar.jpg"); */
+	background-size: cover;
+	border-radius: 50%;
+	box-shadow: 0 0 10vw 0vw #02eb98, 0 0 2vw 0.4vw #099e6a,
+		inset 0 0 0.5vw 0.2vw #02eb98, inset 0 0 0.2vw 0.2vw #00ac70,
+		inset 0 0 0.25vw 0.2vw #027b50;
+}
+
+.WIN {
+	box-shadow: 0 0 10vw 0vw #02eb98, 0 0 2vw 0.4vw #099e6a,
+		inset 0 0 0.5vw 0.2vw #02eb98, inset 0 0 0.2vw 0.2vw #00ac70,
+		inset 0 0 0.25vw 0.2vw #027b50;
+}
+
+.LOSE {
+	box-shadow: 0 0 0vw 0vw red, 0 0 2vw 0.4vw #b80b0b, inset 0 0 0.1vw 0.01vw red,
+		inset 0 0 0.2vw 0.2vw #b80b0b, inset 0 0 0.25vw 0.2vw #b80b0b;
+}
+
+.textLOSE {
+	color: red;
+}
+.textWIN {
+	color: #02eb98;
+}
+
+.statusMatch {
+	font-size: 2vw;
+	/* color: #02eb98; */
+}
+
+.choiseButton {
+	width: 85vw;
+	height: 6vw;
+	/* background: green; */
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.choiseButton button {
+	width: 13vw;
+	height: 3vw;
+	border: 2px solid #099e6a;
+	background: none;
+	border-radius: 13vw;
+	color: #099e6a;
+	font-size: 1.3vw;
+	transition: 0.5s ease-in-out;
+}
+
+.choiseButton button:hover {
+	background: #099e6a;
+	color: white;
+
+	cursor: pointer;
+}
+.homeButton a {
+	text-decoration: none;
+	color: #099e6a;
+	font-size: 1.3vw;
+}
+
+.exit,
+.popUp {
+	width: 15vw;
+	height: 7vw;
+	/* background: blue; */
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	position: absolute;
+	top: 10vh;
+	right: -52vw;
+	z-index: 3;
+	/* animation: pupup 2s ease-in-out; */
+}
+
+.retry_or_not {
+	animation: pupup 12s ease-in-out;
+}
+
+/* .exit {
+	animation: pupup 12s ease-in-out;
+} */
+
+@keyframes pupup {
+	0% {
+		opacity: 0;
+		right: -15vw;
+	}
+	15% {
+		opacity: 100%;
+		right: 2vw;
+	}
+	100% {
+		opacity: 100%;
+
+		right: 2vw;
+	}
+}
+
+.message_popUpR {
+	width: 14vw;
+	height: 3vw;
+	background: green;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 2vw;
+	border-top-right-radius: 0;
+	color: white;
+	font-size: 1vw;
+}
+
+.buttonPopup {
+	width: 14vw;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.buttonPop {
+	width: 5vw;
+	height: 2vw;
+	background: none;
+	border-radius: 1vw;
+	transition: 0.5s ease-in-out;
+	font-size: 1vw;
+}
+
+.buttonAccept {
+	border: 2px solid #099e6a;
+	color: #099e6a;
+}
+
+.buttonRefuse {
+	border: 2px solid #b80b0b;
+	color: #b80b0b;
+}
+
+.buttonRefuse:hover {
+	background: #b80b0b;
+	color: white;
+	cursor: pointer;
+}
+
+.buttonAccept:hover {
+	background: #099e6a;
+	color: white;
+	cursor: pointer;
+}

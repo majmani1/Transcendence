@@ -1,0 +1,919 @@
+:root {
+  --border-color: #02eb98; /* Define the custom property */
+  /* color figma #13b015 */
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #000000 !important;
+  user-select: none;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+/* .menu_corner .home_menu i{
+  display: flex;
+  font-size: 2vw;
+  color: black;
+  text-shadow: -0.5px -0.5px 0 var(--border-color),
+    0.5px -0.5px 0 var(--border-color), -0.5px 0.5px 0 var(--border-color),
+    0.5px 0.5px 0 var(--border-color);
+} */
+
+.main-content {
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+  position: absolute;
+  background-color: transparent;
+  backdrop-filter: blur(5px);
+  box-shadow: inset 16px 0 16px -16px var(--border-color),
+    inset -16px 0 16px -16px var(--border-color);
+  border-radius: 50px;
+  /* border: 1px solid var(--border-color); */
+  width: 85%;
+  height: 80%;
+  box-sizing: border-box;
+  top: 10vh;
+  left: 10dvw;
+  overflow: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+  z-index: 23;
+  /* scroll-snap-align: start; */
+}
+.pingpong,
+.huntgame {
+  /* display: flex; */
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  width: 100%;
+  height: 80vh;
+  background-color: transparent;
+  overflow: visible;
+  scroll-snap-align: start;
+  animation: opacityIntro 1s ease-in-out 1;
+}
+.pingpong .description,
+.huntgame .description {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  justify-items: center;
+  align-items: center;
+  width: 80%;
+  height: 50%;
+  transform: translate(20%, 57%);
+  background-color: transparent;
+  backdrop-filter: blur(5px);
+  border-radius: 50px;
+  border: 1px solid var(--border-color);
+  color: #ffffff;
+}
+.pingpong .description img,
+.huntgame .description img {
+  position: absolute;
+  transform: translate(-50%, -65%);
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px solid var(--border-color);
+  filter: drop-shadow(0px 0px 3px #00ffae);
+}
+.pingpong .description span,
+.huntgame .description span {
+  /* position: absolute; */
+  /* transform: translate(-50%, -50%); */
+  /* width: 100%; */
+  /* height: auto; */
+  text-align: center;
+  /* margin-top: -17vh; */
+  font-size: 1.8vw;
+  font-weight: bold;
+}
+.pingpong .gameModes,
+.huntgame .gameModes {
+  display: grid;
+  grid-template-rows: 1fr 3fr;
+  width: 90%;
+  /* margin-bottom: 0; */
+  margin-top: 7vh;
+  height: 70%;
+  /* background-color: tomato; */
+  justify-items: center;
+  align-items: center;
+  /* border: 5px solid var(--border-color); */
+}
+
+.pingpong .gameModes span,
+.huntgame .gameModes span {
+  font-size: 8dvw;
+  /* filter: drop-shadow( inset 0px 0px 5px #00ffae); */
+  text-shadow: 0 0 5px rgb(203, 196, 196);
+  font-weight: bold;
+  color: whitesmoke;
+}
+.pingpong .gameModes .Ptitle {
+  animation: text_animation 15s infinite;
+}
+@keyframes text_animation {
+  0% {
+    transform: scale(1);
+    text-shadow: 0 0 5px var(--border-color);
+  }
+  50% {
+    transform: scale(1.1);
+    color: black;
+    text-shadow: 0 0 5px white;
+  }
+  100% {
+    transform: scale(1);
+    text-shadow: 0 0 5px var(--border-color);
+  }
+}
+.huntgame .gameModes .Htitle {
+  animation: text_animation 15s infinite;
+}
+.pingpong .gameModes .Modes,
+.huntgame .gameModes .Modes {
+  display: grid;
+  /* box-sizing: border-box; */
+  grid-template-columns: repeat(3, 100%);
+  width: 100%;
+  height: 100%;
+  /* background-color: rgb(224, 64, 64); */
+  border-radius: 55px;
+  backdrop-filter: blur(5px);
+
+  /* overflow: scroll; */
+  overflow-x: auto;
+  overflow-y: hidden;
+  /* scroll-snap-align: start; */
+  align-items: center; /* Center items vertically within each row */
+  justify-items: center;
+  box-shadow: inset 8px 0 8px -8px var(--border-color),
+    inset -8px 0 8px -8px var(--border-color);
+  scroll-snap-type: x mandatory;
+}
+/* .pingpong .gameModes  .button-left{
+  display: flex;
+  position: fixed;
+  top: 50%;
+  left: 34%;
+  transform: translate(0%, -50%);
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 2vw;
+  height: 2vw;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+  z-index: 10;
+} */
+.pingpong .gameModes .Modes > *,
+.huntgame .gameModes .Modes > * {
+  scroll-snap-align: start; /* Ensure each child element snaps to the start */
+  margin: 0; /* Remove any margin */
+  padding: 0; /* Remove any padding */
+}
+@keyframes bounce_down {
+  0%,
+  100% {
+    transform: translateY(-2vh);
+  }
+  50% {
+    transform: translateY(4vh);
+  }
+}
+
+.arrow-down {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  border: 1px solid var(--border-color);
+  color: var(--border-color);
+  bottom: 40%;
+  right: 0.5vw;
+  width: 3vw;
+  height: 12vh;
+}
+.arrow-down:hover,
+.arrow-up:hover {
+  cursor: url("imageLandscape/click.png") 16 16, auto !important;
+  transform: scale(1.1);
+  box-shadow: 0 0 5px var(--border-color);
+}
+.arrow-down:hover i,
+.arrow-up:hover i {
+  animation: none;
+  transform: scale(1.1);
+  text-shadow: 0 0 5px var(--border-color);
+  cursor: url("imageLandscape/click.png") 16 16, auto !important;
+}
+.arrow-down i {
+  font-size: 1.5vw;
+  text-shadow: 0 0 5px var(--border-color);
+  animation: bounce_down 2s ease-in-out infinite;
+}
+.arrow-up {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  border: 1px solid var(--border-color);
+  color: var(--border-color);
+  bottom: -60%;
+  right: 0.5vw;
+  width: 3vw;
+  height: 12vh;
+}
+.arrow-up i {
+  font-size: 1.5vw;
+  text-shadow: 0 0 5px var(--border-color);
+  animation: bounce_down 2s ease-in-out infinite;
+}
+/* 
+.pingpong .gameModes .Modes::-webkit-scrollbar-corner,
+.main-content::-webkit-scrollbar-corner {
+  display: none;
+} */
+.pingpong .gameModes .Modes::-webkit-scrollbar,
+.main-content::-webkit-scrollbar,
+.huntgame .gameModes .Modes::-webkit-scrollbar {
+  display: none;
+  width: 0.5vw;
+  height: 0.5vw;
+}
+
+/* .pingpong .gameModes .Modes::-webkit-scrollbar-track,
+ .main-content::-webkit-scrollbar-track,
+ .huntgame .gameModes .Modes::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px var(--border-color);
+  background-color: transparent;
+  border-radius: 50px;
+}
+.pingpong .gameModes .Modes::-webkit-scrollbar-thumb,
+.main-content::-webkit-scrollbar-thumb,
+.huntgame .gameModes .Modes::-webkit-scrollbar-thumb
+{
+  background-color: var(--border-color);
+  border-radius: 50px;
+  box-shadow: inset 0px 0px 6px var(--border-color);
+  /* margin-left: 20px;
+  margin-right: 20px; 
+}  */
+.gameModes .scrollLeft,
+.gameModes .scrollRight,
+.huntgame .gameModes .HscrollLeft,
+.huntgame .gameModes .HscrollRight {
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  width: 2vw;
+  height: 2vw;
+  border-radius: 50%;
+  filter: drop-shadow(0px 0px 5px var(--border-color));
+  z-index: 10;
+}
+
+.gameModes .scrollLeft {
+  top: 50%;
+  left: 34%;
+}
+.gameModes .scrollRight {
+  top: 50%;
+  right: 7%;
+}
+.scrollLeft:hover i,
+.scrollRight:hover i,
+.HscrollLeft:hover i,
+.HscrollRight:hover i {
+  cursor: url("imageLandscape/click.png") 16 16, auto !important;
+  transform: scale(1.2); /* Scale the element on hover */
+  background-color: rgba(128, 128, 128, 0.705);
+  border-radius: 50%;
+}
+.huntgame .gameModes .HscrollRight {
+  margin-top: 7%;
+  margin-right: -57%;
+}
+.huntgame .gameModes .HscrollLeft {
+  margin-top: 7%;
+  margin-left: -57%;
+}
+
+.gameModes .scrollLeft i,
+.gameModes .scrollRight i,
+.huntgame .gameModes .HscrollLeft i,
+.huntgame .gameModes .HscrollRight i {
+  font-size: 1vw;
+  color: white;
+  text-shadow: 0 0 5px var(--border-color);
+}
+.Modes .remote,
+.Modes .local,
+.Modes .tournament {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  width: 99.9%;
+  height: 100%;
+  justify-content: start;
+  align-items: start;
+  background-color: transparent;
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  border-radius: 50px;
+}
+
+.Modes .remote .button-section,
+.Modes .local .button-section,
+.Modes .tournament .button-section {
+  /* font-size: 2vw; */
+  display: grid;
+  gap: 0;
+  grid-template-rows: 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* margin-left: 1vw; */
+  /* background-color: turquoise; */
+  width: 100%;
+  height: 100%;
+  /* height: auto; */
+}
+.Modes .remote .button-section span,
+.Modes .local .button-section span,
+.Modes .tournament .button-section span {
+  /* top: 5vh; */
+  position: relative;
+  top: 2vh;
+  /* left: 1vw; */
+  width: 140%;
+  font-size: 2vw;
+  font-weight: bold;
+  /* background-color: tomato; */
+  color: whitesmoke;
+}
+.Modes .local .button-section span,
+.Modes .tournament .button-section span {
+  width: 140%;
+  /* font-size: 2.5vw; */
+}
+.Modes .remote .description-game-mode,
+.Modes .local .description-game-mode,
+.Modes .tournament .description-game-mode {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  transform: translate(10%, 0%);
+  width: 100%;
+  height: 100%;
+  /* background-color: tomato; */
+}
+.Modes .remote .description-game-mode .monitor-container,
+.Modes .local .description-game-mode .monitor-container,
+.Modes .tournament .description-game-mode .monitor-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 90%;
+  height: 70%;
+  /* background-color: tomato; */
+}
+.Modes .remote .description-game-mode span,
+.Modes .local .description-game-mode span,
+.Modes .tournament .description-game-mode span {
+  /* position: relative; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10vh;
+  transform: translate(-5%, -30%);
+  /* transform: translate(0%,20%); */
+  /* left: 1vw; */
+  text-align: center;
+  font-size: 2vw;
+  font-weight: bold;
+  color: whitesmoke;
+}
+.Modes .remote .button-section a,
+.Modes .local .button-section a,
+.Modes .tournament .button-section a {
+  width: 80%;
+  /* height: 50%; */
+  height: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transform: translate(35%, -10%);
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 50px;
+  color: whitesmoke;
+  font-size: 1.5vw;
+  font-weight: bold;
+  text-decoration: none;
+  /* margin-top: 1vh; */
+}
+
+.Modes .remote .button-section a:hover,
+.Modes .local .button-section a:hover,
+.Modes .tournament .button-section a:hover {
+  background-color: var(--border-color);
+  color: #000000;
+}
+.Modes .remote .description-game-mode,
+.Modes .local .description-game-mode,
+.Modes .tournament .description-game-mode {
+  /* background-color: tomato; */
+  /* justify-content: center; */
+  width: 100%;
+  height: 100%;
+}
+
+.Modes .local .guide_local {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 100%;
+  border: 1px solid var(--border-color);
+  /* background-color: tomato; */
+}
+
+.Modes .tournament .scheme {
+  /* display: flex; */
+  position: relative;
+  top: 5vh;
+  width: 17.5vw;
+  height: 15vh;
+  border-left: 5px solid white;
+  border-right: 5px solid white;
+  /* background-color: tomato; */
+}
+.Modes .tournament .scheme .circle i {
+  color: white;
+  font-size: 2vw;
+}
+.Modes .tournament .scheme .circle {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 5px solid white;
+  width: 5vw;
+  height: 5vw;
+  background-color: black;
+}
+
+.scheme .circle1 {
+  top: -3vh; /* Convert -10% to -10vh */
+  left: -3vw; /* Convert -20% to -20vw */
+}
+
+.scheme .circle2 {
+  top: 13vh; /* Convert 60% to 60vh */
+  left: -3vw; /* Convert -20% to -20vw */
+}
+
+.scheme .circle3 {
+  top: -3vh; /* Convert -10% to -10vh */
+  left: 14.8vw; /* Convert 83% to 83vw */
+}
+
+.scheme .circle4 {
+  top: 13vh; /* Convert 60% to 60vh */
+  left: 14.8vw; /* Convert 83% to 83vw */
+}
+
+.scheme .circle5 {
+  top: 5vh;
+  left: 6vw;
+  /* Convert 90% to 90vw and 50% to 50vh */
+}
+.scheme .circle5::before,
+.scheme .circle5::after {
+  content: ""; /* Creates the pseudo-element */
+  position: absolute; /* Positions the element relative to the central user */
+  width: 6.5vw; /* The length of the line */
+  height: 1vh; /* The thickness of the line */
+  background-color: white; /* The color of the line */
+}
+
+.scheme .circle5::before {
+  top: 50%;
+  left: -6.5vw;
+  /* Vertically centers the line */
+  transform: translateY(
+    -50%
+  ); /* Corrects the vertical alignment to be exact center */
+}
+
+.scheme .circle5::after {
+  top: 50%; /* Vertically centers the line */
+  right: -6.5vw; /* Shifts the line to the right by 10vw */
+  transform: translateY(
+    -50%
+  ); /* Corrects the vertical alignment to be exact center */
+}
+
+.huntgame .Modes .tournament .button-section,
+.huntgame .Modes .tournament .description-game-mode {
+  filter: blur(5px);
+  color: gray; /* Set text color to gray */
+
+  pointer-events: none; /* Disable pointer events */
+  /* opacity: 0.5; */
+}
+.huntgame .Modes .tournament .soon {
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+
+  width: 50%;
+  height: 50%;
+  transform: translate(50%, 50%);
+  border-radius: 50px;
+  z-index: 23;
+}
+.huntgame .Modes .tournament .soon span {
+  color: white;
+  text-shadow: 0 0 8px var(--border-color);
+  /* font-size: 2vw; */
+}
+.monitor-container {
+  display: flex;
+  /* width: 60vw; */
+  margin-top: 2vh;
+  /* gap: 40px; */
+}
+
+/* Styles for the screen */
+.monitor {
+  position: relative;
+  width: 13vw;
+  height: 17vh;
+  border: 5px solid white;
+  box-shadow: inset 0 0 5px var(--border-color);
+  /* box-shadow: 0 0 5px var(--border-color); */
+  border-radius: 20px;
+  background-color: transparent;
+}
+
+/* Vertical lines on the screen */
+@keyframes lineMove {
+  0%,
+  100% {
+    transform: translateY(-3vh);
+  }
+  50% {
+    transform: translateY(9vh);
+  }
+}
+@keyframes lineMove_1 {
+  0%,
+  100% {
+    transform: translateY(9vh);
+  }
+  50% {
+    transform: translateY(-3vh);
+  }
+}
+.vertical-lines,
+.vertical-lines_1 {
+  position: absolute;
+  width: 0.7vw;
+  height: 4.5vh;
+  background-color: white;
+  box-shadow: 0 0 5px var(--border-color);
+  top: 20%;
+  border-radius: 5px;
+}
+.vertical-lines {
+  animation: lineMove 3s infinite;
+}
+.vertical-lines_1 {
+  animation: lineMove_1 3s infinite;
+}
+/* Position the lines on the left and right of the screen */
+.line-left {
+  left: 0.65vw;
+}
+
+.line-right {
+  right: 0.65vw;
+}
+
+/* The screen stand */
+.stand {
+  position: absolute;
+  bottom: -7vh;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: inset 0 0 8px var(--border-color);
+  width: 4vw;
+  height: 7vh;
+  background-color: white;
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+}
+
+/* Styles for the ball in the center of the screen */
+@keyframes ballMove {
+  0%,
+  100% {
+    transform: translate(-4.5vw, -8vh);
+    animation-timing-function: ease-in;
+  }
+  50% {
+    transform: translate(3.5vw, 6vh);
+    animation-timing-function: ease-out;
+  }
+}
+@keyframes ballMove_1 {
+  0%,
+  100% {
+    transform: translate(3.5vw, 6vh);
+    animation-timing-function: ease-in;
+  }
+  50% {
+    transform: translate(-4.5vw, -8vh);
+    animation-timing-function: ease-in-out;
+  }
+}
+.ball,
+.ball_1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1vw;
+  height: 1vw;
+  background-color: white;
+  box-shadow: 0 0 5px var(--border-color);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.ball {
+  animation: ballMove 3s ease-in-out infinite;
+}
+.ball_1 {
+  animation: ballMove_1 3s ease-in-out infinite;
+}
+
+.huntgame .lines {
+  position: absolute;
+  /* display: flex; */
+  width: 3vw;
+  height: 2vh;
+  overflow: hidden;
+}
+.lines-1 {
+  border-bottom: 5px solid white;
+  border-right: 5px solid white;
+  left: 2vw;
+}
+.lines-2 {
+  border-top: 5px solid white;
+  border-right: 5px solid white;
+  top: 5vh;
+}
+.lines-3 {
+  border-top: 5px solid white;
+  /* border-left: 5px solid white; */
+  left: 3vw;
+  top: 7vh;
+}
+.lines-4 {
+  border-top: 5px solid white;
+  /* border-right: 5px solid white; */
+  left: 6.1vw;
+  top: 4.5vh;
+}
+.lines-5 {
+  border-top: 5px solid white;
+  /* border-right: 5px solid white; */
+  left: 8.7vw;
+  top: 4.5vh;
+}
+.lines-7 {
+  border-bottom: 5px solid white;
+  border-left: 5px solid white;
+  left: 8.5vw;
+  top: 0vh;
+}
+.lines-8 {
+  border-bottom: 5px solid white;
+  border-top: 5px solid white;
+  left: 0;
+  top: 10vh;
+}
+.lines-9 {
+  border-bottom: 5px solid white;
+  border-left: 5px solid white;
+  left: 2.9vw;
+  bottom: 1.9vh;
+}
+.lines-10 {
+  border-bottom: 5px solid white;
+  border-top: 5px solid white;
+  right: 0;
+  bottom: 5vh;
+}
+.lines-11 {
+  /* border-bottom: 5px   solid white; */
+  border-right: 5px solid white;
+  left: 2.9vw;
+  bottom: 8vh;
+}
+.lines-12 {
+  border-left: 5px solid white;
+  border-right: 5px solid white;
+  left: 6.1vw;
+  bottom: 1.9vh;
+  height: 3.1vh !important;
+}
+.pointgame {
+  position: absolute;
+  width: 0.7vw;
+  height: 0.7vw;
+  top: 5.5vh;
+  right: 0.1vw;
+  /* transform: translate(50%, 50%); */
+  background-color: rgba(255, 255, 255, 0.751);
+  box-shadow: inset 0 0 5px var(--border-color);
+  border-radius: 50%;
+  animation: point 15s infinite;
+}
+@keyframes point {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+.playerbot,
+.playerbot2 {
+  position: absolute;
+  width: 3vw;
+  height: 3vw;
+  color: white;
+  border-radius: 50%;
+}
+@keyframes playermove {
+  0% {
+    transform: rotate(0) translate(0, 0);
+  }
+  20% {
+    transform: translateX(4vw);
+  }
+  30% {
+    transform: translate(4vw, 2.5vh) rotate(90deg);
+  }
+  50% {
+    transform: translate(10vw, 2.5vh);
+  }
+  70% {
+    transform: translate(4vw, 2.5vh) rotate(180deg);
+  }
+  80% {
+    transform: translateX(4vw) rotate(270deg);
+  }
+}
+@keyframes playermove2 {
+  0% {
+    transform: rotate(0) translate(0, 0);
+  }
+  20% {
+    transform: translateX(-4vw);
+  }
+  30% {
+    transform: translate(-4vw, 2.5vh) rotate(90deg);
+  }
+  50% {
+    transform: translateY(-4vh) rotate(180deg);
+  }
+  70% {
+    transform: translate(-3vw, 0vh);
+  }
+}
+.playerbot {
+  left: 0;
+  top: 2.5vh;
+}
+.playerbot2 {
+  right: 0;
+  bottom: 2.5vh;
+}
+.playerbot i,
+.playerbot2 i {
+  /* transform: rotate(-180deg) translate(0, 0); */
+  font-size: 1.4vw;
+  text-shadow: 0 0 8px var(--border-color);
+}
+.playerbot2 i {
+  animation: playermove2 15s infinite;
+  /* animation-direction: reverse; */
+}
+.playerbot i {
+  animation: playermove 15s infinite;
+  /* animation-direction: reverse; */
+}
+
+@keyframes move {
+  0% {
+    transform: translate(0vw, 0vh);
+  }
+  25% {
+    transform: translateY(2vw) scale(1.1);
+  }
+  100% {
+    transform: translateY(0vw);
+  }
+}
+
+@keyframes move1 {
+  0% {
+    transform: translate(0vw, 0vh);
+  }
+  25% {
+    transform: translateX(2vw) scale(1.2);
+  }
+  100% {
+    transform: translateX(0vw);
+  }
+}
+
+@keyframes move2 {
+  0% {
+    transform: translate(0vw, 0vh);
+  }
+  25% {
+    transform: translateY(-2vw) scale(1.1);
+  }
+  100% {
+    transform: translateY(0vw);
+  }
+}
+
+.sidebar {
+  display: flex;
+  position: fixed;
+  font-family: "Press Start 2P";
+  font-size: 3ch;
+  right: 1vw;
+  bottom: 5vh;
+  width: auto;
+  height: 10vh;
+  background-color: #02eb9a31;
+  z-index: 6;
+  box-shadow: inset 2px 0 5px var(--border-color);
+  text-shadow: 0 0 5px white;
+  border-radius: 20px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+  padding: 0 8px;
+  text-overflow: ellipsis;
+  animation: WelcomeSlide 5s ease-in-out 1;
+  /* white-space: wrap; */
+}
+.sidebar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: inherit; /* Inherit the background color */
+  filter: blur(5px); /* Apply the blur effect */
+  z-index: -1; /* Ensure it is behind the content */
+}
+@media (min-width: 2000px) {
+  .huntgame .gameModes span {
+    font-size: 6dvw;
+  }
+}

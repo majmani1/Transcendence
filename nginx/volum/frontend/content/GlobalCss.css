@@ -1,0 +1,594 @@
+:root {
+  --border-color: #02eb98; /* Define the custom property */
+  /* color figma #13b015 */
+}
+
+@font-face {
+  font-family: "Press Start 2P";
+  src: url("./fonts/Durbank-EamEz.ttf") format("truetype");
+  font-style: normal;
+}
+@font-face {
+  font-family: "poppins";
+  src: url("./fonts/Poppins-Bold.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  cursor: url("imageLandscape/pointer\ 1.png") 16 16, auto !important;
+}
+
+button:hover,
+a:hover {
+  cursor: url("imageLandscape/click.png") 16 16, auto !important;
+}
+.custom-loading-spinner {
+  display: flex;
+  position: fixed !important;
+  background-color: black !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  z-index: 1000;
+}
+.custom-spinner {
+  position: fixed !important;
+  top: 40% !important;
+  left: 45% !important;
+  width: 5vw !important;
+  height: 5vw !important;
+  border: 16px solid #f3f3f3 !important;
+  border-top: 16px solid var(--border-color) !important;
+  border-radius: 50% !important;
+  animation: spin 2s linear infinite;
+  z-index: 1000;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+body,
+html {
+  display: flex;
+  width: 100vw !important;
+  height: 100vh !important;
+  background-color: #000 !important;
+  overflow: hidden;
+  user-select: none;
+}
+
+.background {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50vh;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.background :nth-child(1) {
+  position: absolute;
+  top: 11vh;
+  left: 1vw;
+  width: 3vw;
+  height: 3vw;
+  border: 2px solid var(--border-color); /* Use the custom property */
+  border-radius: 50%;
+  background-color: transparent;
+  opacity: 0.5;
+  animation: move 20s infinite ease-in-out;
+  box-shadow: 0 0 8px var(--border-color); /* Use the custom property */
+}
+
+.background :nth-child(2) {
+  position: absolute;
+  left: 10vw;
+  bottom: 3vh;
+  width: 10vw;
+  height: 2vw;
+  border: 2px solid var(--border-color); /* Use the custom property */
+  border-radius: 50px;
+  background-color: transparent;
+  opacity: 0.5;
+  animation: move1 15s infinite ease-in-out;
+  box-shadow: 0 0 8px var(--border-color); /* Use the custom property */
+}
+
+.background :nth-child(3) {
+  position: absolute;
+  top: 11vh;
+  left: 20vw;
+  width: 1vw;
+  height: 1vw;
+  border: 2px solid var(--border-color); /* Use the custom property */
+  border-radius: 50%;
+  background-color: transparent;
+  opacity: 0.5;
+  animation: move 20s infinite ease-in-out;
+  box-shadow: 0 0 8px var(--border-color); /* Use the custom property */
+}
+
+.background :nth-child(4) {
+  position: absolute;
+  top: 20vh;
+  left: 30vw;
+  width: 2vw;
+  height: 2vw;
+  border: 2px solid var(--border-color); /* Use the custom property */
+  border-radius: 50%;
+  background-color: transparent;
+  opacity: 0.5;
+  animation: move1 15s infinite ease-in-out;
+  box-shadow: 0 0 8px var(--border-color); /* Use the custom property */
+}
+
+.background :nth-child(5) {
+  position: absolute;
+  right: 0vw;
+  top: 11vh;
+  width: 10vw;
+  height: 2.5vw;
+  border: 2px solid var(--border-color); /* Use the custom property */
+  border-radius: 50px;
+  background-color: transparent;
+  opacity: 0.5;
+  animation: move1 15s infinite ease-in-out;
+  box-shadow: 0 0 8px var(--border-color); /* Use the custom property */
+}
+
+.background :nth-child(6) {
+  position: absolute;
+  right: 15vw;
+  top: 25vh;
+  width: 2vw;
+  height: 2vw;
+  border: 2px solid var(--border-color); /* Use the custom property */
+  border-radius: 50%;
+  background-color: transparent;
+  opacity: 0.5;
+  animation: move 20s infinite ease-in-out;
+  box-shadow: 0 0 8px var(--border-color); /* Use the custom property */
+}
+
+.background :nth-child(7) {
+  position: absolute;
+  right: 50vw;
+  top: 50vh;
+  width: 3vw;
+  height: 3vw;
+  border: 2px solid var(--border-color); /* Use the custom property */
+  border-radius: 50%;
+  background-color: transparent;
+  opacity: 0.5;
+  animation: move2 15s infinite reverse;
+  box-shadow: 0 0 8px var(--border-color); /* Use the custom property */
+}
+
+.background :nth-child(8) {
+  position: absolute;
+  right: 40vw;
+  top: 15vh;
+  width: 4vw;
+  height: 4vw;
+  border: 2px solid var(--border-color); /* Use the custom property */
+  border-radius: 50%;
+  background-color: transparent;
+  opacity: 0.5;
+  animation: move 20s infinite ease-in-out;
+  box-shadow: 0 0 8px var(--border-color); /* Use the custom property */
+}
+
+.background :nth-child(9) {
+  position: absolute;
+  right: -2vw;
+  bottom: -1vh;
+  width: 5vw;
+  height: 5vw;
+  border: 2px solid var(--border-color); /* Use the custom property */
+  border-radius: 50%;
+  background-color: transparent;
+  opacity: 0.5;
+  animation: move1 15s infinite ease-in-out;
+  box-shadow: 0 0 8px var(--border-color); /* Use the custom property */
+}
+
+@keyframes move {
+  0% {
+    transform: translate(0vw, 0vh);
+  }
+  25% {
+    transform: translateY(2vw) scale(1.1);
+  }
+  100% {
+    transform: translateY(0vw);
+  }
+}
+
+@keyframes move1 {
+  0% {
+    transform: translate(0vw, 0vh);
+  }
+  25% {
+    transform: translateX(2vw) scale(1.2);
+  }
+  100% {
+    transform: translateX(0vw);
+  }
+}
+
+@keyframes move2 {
+  0% {
+    transform: translate(0vw, 0vh);
+  }
+  25% {
+    transform: translateY(-2vw) scale(1.1);
+  }
+  100% {
+    transform: translateY(0vw);
+  }
+}
+
+.alert,
+.alert_error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  font-family: "Press Start 2P";
+  font-size: 3ch;
+  overflow: hidden;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.616);
+  right: 1vw;
+  bottom: 5vh;
+  width: auto;
+  min-width: 17vw;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  height: 10vh;
+  background-color: var(--border-color);
+  color: #000000;
+  border-radius: 5px;
+  border: 1px solid white;
+  box-shadow: inset 16px 10px 16px -16px var(--border-color),
+    inset -16px 10px 16px -16px var(--border-color);
+  z-index: 100;
+  animation: WelcomeSlide 5s ease-in-out 1;
+}
+.alert_error {
+  background-color: red;
+  color: white;
+  box-shadow: inset -8px -18px 20px -16px rgba(0, 0, 0, 0.655), inset 0px 18px 13px -16px rgba(0, 0, 0, 0.655);
+  border: 1px solid black;
+  text-shadow: 0 0 2px var(--border-color);
+}
+.alert:hover,
+.alert_error:hover {
+  animation-play-state: paused;
+}
+.acceptGame {
+  width: 5vw;
+  height: 1.5vw;
+  background: none;
+  border-radius: 1vw;
+  font-family: 'Press Start 2P';
+  transition: 0.5s ease-in-out;
+  font-size: 2ch;
+  /* border: #fff 2px solid; */
+  margin-left: 10%;
+}
+
+.acceptGame:hover {
+  background-color: black;
+  color: var(--border-color);
+  transition: 0.5s ease-in-out;
+}
+
+.notif_table {
+  display: flex;
+  position: fixed;
+  justify-content: start;
+  flex-direction: column;
+  align-items: start;
+  margin: 8px;
+  width: 32%;
+  height: 40%;
+  transform: translate(20%, 140%);
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #000000;
+  border-radius: 50px;
+  z-index: 110;
+  box-shadow: inset 16px 10px 16px -16px var(--border-color),
+    inset -16px 10px 16px -16px var(--border-color);
+}
+
+.notif_table[hidden] {
+  display: none;
+}
+
+.notif_table::-webkit-scrollbar {
+  display: none;
+}
+
+.notif_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  justify-items: center;
+  /* margin-top: 10px; */
+  align-items: center;
+  margin-top: 1vh;
+  margin-left: 1.5vw;
+  width: 90%;
+  height: 20%;
+  color: white;
+  text-shadow: 0 0 5px var(--border-color);
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+
+  /* white-space: nowrap; */
+}
+.notif_choices {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-left: 8%;
+  gap: 10px;
+  width: 10vw;
+  height: 8vh;
+  /* background-color: #007bff; */
+}
+.notif_choices button {
+  display: flex;
+  justify-content: center; /* Centers icon horizontally */
+  align-items: center; /* Centers icon vertically */
+  width: 2.8vw;
+  height: 2.8vw;
+  border-radius: 50%;
+  background-color: var(--border-color);
+  color: white;
+  border: none; /* Removes border */
+  padding: 0; /* Removes extra padding */
+}
+
+.notif_choices i {
+  font-size: 2.8vw; /* Adjust to ensure icon fits within button */
+  color: black;
+  filter: drop-shadow(0 0 5px var(--border-color));
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.notif_choices i:hover,
+.notif_choices i:focus {
+  transform: scale(1.1);
+  filter: drop-shadow(2px 2px 8px var(--border-color));
+  cursor: url("imageLandscape/click.png") 16 16, auto !important;
+}
+.notif_content {
+  margin-left: 2%;
+  font-size: 120%;
+  color: white;
+  text-shadow: 0 0 5px var(--border-color);
+  /* white-space: nowrap; */
+}
+
+.notifications .red_circle {
+  position: absolute; /* Position relative to .notifications */
+  top: 0; /* Adjust as needed */
+  right: 0; /* Sticks to the right edge */
+  transform: translate(-137%, 178%);
+  width: 0.5vw; /* Use fixed or responsive units */
+  height: 0.5vw;
+  border-radius: 50%;
+  background-color: red;
+  z-index: 100;
+}
+.menu_corner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: fixed;
+  width: 7vh;
+  height: 30vh;
+  margin-top: 35vh;
+  margin-left: 1.5vw;
+  background-color: transparent;
+  backdrop-filter: blur(5px);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  background-color: transparent;
+  z-index: 23;
+  gap: 2.5vh;
+  animation: opacityIntro 1.5s ease-in-out 1;
+}
+.menu_corner a,
+.menu_corner .notifications {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* object-fit: fill; */
+  /* flex-grow: 1; */
+  background: none;
+  border: none;
+  color: inherit;
+  padding: 0;
+  position: relative;
+  font: inherit;
+  cursor: pointer;
+}
+
+.menu_corner a:hover img,
+.menu_corner .notifications:hover img,
+.menu_corner .notifications:focus img,
+.menu_corner a:focus img,
+.navbar a:hover,
+.navbar a:focus {
+  filter: drop-shadow(0px 0px 15px #00ffae) grayscale(0%);
+  scale: 1.1;
+  opacity: 0.8;
+  color: #02eb98;
+  cursor: url("imageLandscape/click.png") 16 16, auto !important;
+}
+/* .menu_corner .notifications:hover .red_circle {
+  transform: scale(1.1);
+  filter: drop-shadow(2px 2px 8px var(--border-color));
+} */
+
+.menu_corner img {
+  object-fit: fill;
+  filter: grayscale(100%);
+  width: 60%;
+  height: 60%;
+  /* transform: translate(-50%, -50%); */
+}
+.menu_corner .notifications img {
+  object-fit: fill;
+  filter: grayscale(100%);
+  width: 3vw;
+  height: 3.1vw;
+  /* transform: translate(-50%, -50%); */
+}
+.navbar {
+  position: fixed; /* Fix the navbar position */
+  top: 0; /* Align it to the top */
+  right: 0; /* Align it to the right */
+  width: 5%; /* Set a fixed width */
+  height: 10%; /* Full height */
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Add a shadow for better visibility */
+  z-index: 23; /* Ensure it stays on top of other elements */
+}
+
+.navbar div {
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  flex-direction: column;
+}
+
+.navbar img {
+  width: 4dvw;
+  height: 8dvh;
+}
+.navbar img:hover {
+  cursor: url("imageLandscape/click.png") 16 16, auto !important;
+}
+.userGetAuthe {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  position: relative;
+
+  width: 100%;
+  height: 25%;
+  color: white;
+  /* background-color: red; */
+  font-family: "Press Start 2P";
+  font-size: 1.5ch;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.616);
+  background-color: transparent;
+  border-radius: 50px;
+  filter: drop-shadow(inset 0 0 5px var(--border-color));
+  box-shadow: inset 16px 10px 16px -16px var(--border-color),
+    inset -16px 10px 16px -16px var(--border-color);
+  z-index: 100;
+}
+.AutheUsers {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  /* position: fixed; */
+  width: 80%;
+  height: auto;
+  top: 8vh;
+  gap: 3px;
+  margin: 6px;
+}
+
+.AutheUsers p {
+  grid-row: 1;
+  position: relative;
+  top: 2vh;
+  left: 8vw;
+  font-size: 4ch;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.616);
+  align-self: center;
+}
+
+.AutheUsersImg {
+  grid-row: 1;
+  object-fit: cover;
+  position: fixed;
+  left: 6%;
+  width: 4vw;
+  height: 4vw;
+  border: 2px solid #02eb98;
+  border-radius: 100%;
+  text-align: center;
+  /* box-shadow: 0 0 100vw 0vw #ffffff, 0 0 5vw 0vw #ffffff, inset 0 0 0vw 0vw #fafafa, inset 0 0 0vw 0vw #ffffff, inset 0 0 0vw 0vw #ffffff; */
+}
+
+.addUserAuthe {
+  position: relative;
+  grid-row: 1;
+  width: 3vw;
+  height: 3vw;
+  left: 6vw;
+  top: 2vh;
+}
+.addUserAuthe:hover {
+  cursor: url("imageLandscape/click.png") 16 16, auto !important;
+  filter: drop-shadow(0 0 5px var(--border-color));
+}
+
+.hide_others {
+  display: flex;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+}
+.hide_others[hidden] {
+  display: none;
+}
+@media (min-width: 2270px) {
+  .navbar img {
+    width: 5dvw;
+    height: 9dvh;
+  }
+  .menu_corner .notifications img {
+    width: 2.8vw;
+    height: 2.8vw;
+  }
+  .custom-spinner {
+    width: 4vw !important;
+    height: 4vw !important;
+  }
+  /* .notifications .red_circle {
+    right: 1vw;
+  } */
+}
+#username_target:hover {
+  cursor: url("imageLandscape/click.png") 16 16, auto !important;
+  text-shadow: 0 0 5px var(--border-color);
+}
